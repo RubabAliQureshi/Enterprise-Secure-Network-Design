@@ -1,0 +1,41 @@
+
+CE313 – Milestone 2: Mid-Semester Progress Report
+Computer Communications and Networks
+Instructor: Engr. Muhammad Ahmad Nawaz
+Project Theme: Secure Enterprise Campus Network
+Group Members:
+Rubab Ali 2023614
+M. Afeef Bari 2023356
+Yashfa Fatima 2023762
+Mahad Aqeel 2023286
+
+https://docs.google.com/document/d/1rPQZja0n9eqk606F1NuEOGkXR4PeEs8SYlrvE_zG50w/edit?usp=sharing
+I. Current Topology Status
+The foundational physical and logical design of the Secure Enterprise Campus Network has been successfully established within the simulation environment. A robust hierarchical network model is actively being deployed, utilizing a centralized core aggregation tier interconnected with a primary edge router to handle upcoming inter-VLAN routing and external wide-area network (WAN) traffic.
+Distribution and access layer switches have been positioned to serve distinct organizational zones across the university campus. These zones include:
+Academic Departments: Faculty of Computer Science and Engineering (FCSE), Mechanical Engineering (ME), and Materials Science.
+Residential Blocks: Logically separated segments for Boys Hostels and Girls Hostels.
+Administrative & Support Services: Dedicated access nodes for campus administrative operations.
+Centralized Services Farm: A consolidated server zone housing dedicated internal DNS and Web servers directly linked to the core backbone.
+Physical cabling and interface links have been fully connected. Initial point-to-point connectivity tests confirm that the underlying Layer 2 infrastructure is stable, MAC learning is functioning as intended, and interfaces are operational prior to enforcing logical VLAN segmentation.
+II. Initial Protocol Analysis & Captures
+To verify basic Layer 3 end-to-end reachability and Application Layer functionality, preliminary packet captures were extracted using the simulation environment's integrated protocol analyzer. Test traffic streams were initiated from edge client nodes targeting the centralized services farm.
+2.1 DNS Resolution Verification
+Captures confirm that standard UDP-based domain name queries are successfully originating from client PCs and traversing the core to reach the dedicated DNS server. The server processes the requests and returns properly formatted DNS response packets, successfully resolving the internal academic domain name (e.g., campus.giki.edu.pk) to its designated internal IPv4 address.
+2.2 TCP/HTTP Application Delivery
+Following successful address resolution, transport layer sessions were analyzed. The standard TCP three-way handshake was captured sequentially:
+SYN initiated by the client to request synchronization.
+SYN-ACK returned by the web server acknowledging the request and passing its initial sequence number.
+ACK transmitted by the client to establish a reliable, full-duplex connection.
+Subsequent application payloads demonstrate functional HTTP GET requests sent to port 80, followed immediately by valid HTTP 200 OK responses containing the initial web page frames. This confirms successful application-layer service delivery across the campus backbone.
+
+III. Preliminary Performance Measurements
+Baseline performance metrics were established using unoptimized end-to-end connectivity sweeps across the campus infrastructure. These baseline measurements document the network's operational characteristics in its raw state prior to the deployment of logical VLAN isolation, Quality of Service (QoS) queues, or advanced access control lists (ACLs).
+3.1 Baseline Latency & Reachability
+Initial ICMP Echo Requests routed between the residential hostel access layer and the centralized server block demonstrate consistent reachability. The unoptimized baseline latency indicates an average Round Trip Time (RTT) across the core backbone of 3s.
+3.2 Identified Baseline Constraints
+Current simulation telemetry reveals that broadcast frames (such as initial ARP requests) are pervasive across the entire topology due to the network currently operating as a single, unsegmented broadcast domain. While collision domains are isolated per switch port via full-duplex links, the pervasive broadcast overhead represents a clear scaling bottleneck.
+This baseline telemetry provides an essential control state. These metrics will be directly compared against the finalized network state once IEEE 802.1Q trunking, logical VLAN boundaries, and traffic filtering policies are fully activated in Milestone 3.
+
+
+

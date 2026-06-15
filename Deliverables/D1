@@ -1,0 +1,46 @@
+
+https://docs.google.com/document/d/1rPQZja0n9eqk606F1NuEOGkXR4PeEs8SYlrvE_zG50w/edit?usp=sharing
+
+CE313 – Semester Project Proposal
+Computer Communications and Networks
+Instructor: Engr. Muhammad Ahmad Nawaz
+Project Theme: Secure Enterprise Campus Network
+Group Members:
+Rubab Ali 2023614
+M. Afeef Bari 2023356
+Yashfa Fatima 2023762
+Mahad Aqeel 2023286
+
+
+Executive Summary
+This project focuses on designing, simulating, and analyzing a scalable, secure, and highly available hierarchical campus network. Modeled for a university environment, the infrastructure will establish optimized communication across distinct functional zones—such as administration, faculties, student labs, and centralized server blocks—while enforcing robust perimeter security and enabling secure remote access.
+Core Architecture & Features
+The implementation follows an industry-standard three-tier hierarchical campus design centered around foundational routing, switching, and security principles:
+Segmentation & Switching: Logical isolation of individual departments using dedicated VLANs.
+Routing Infrastructure: Multi-subnet inter-VLAN routing combined with OSPF dynamic routing to manage internal traffic paths efficiently.
+Access Control & Perimeter Security: Deployment of Access Control Lists (ACLs) to restrict unauthorized lateral movement, alongside secure VPN tunnels for remote connectivity.
+External Access: Port Address Translation (NAT/PAT) configured for shared, secure internet access across authorized internal subnets.
+Service Validation: Active testing of underlying TCP/UDP protocols via DNS resolution, HTTP web server access, and baseline ICMP reachability.
+Syllabus Mapping
+Syllabus Domain
+Project Implementation
+Topology Design
+Three-tier hierarchical campus architecture
+VLANs & Switching
+Departmental broadcast domain segmentation
+IP Addressing
+Structured IPv4 subnetting across multiple zones
+Routing Protocols
+OSPF dynamic routing and inter-VLAN gateways
+Network Security
+Traffic filtering via ACLs, segment isolation, and VPN termination
+Transport & Application
+TCP/UDP validation, DNS resolution, and HTTP server traffic
+Troubleshooting & Monitoring
+ICMP connectivity verification (ping) and deep packet inspection
+
+
+Technical Toolstack
+Cisco Packet Tracer: End-to-end network topology simulation and operational validation.
+
+
